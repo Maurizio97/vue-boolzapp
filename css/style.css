@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#back-top {
+    height: 20vh;
+    background-color: green;
+}
+
+#back-down {
+    height: 80vh;
+}
+
+#container-app {
+    width: 80%;
+    height: 95vh;
+    background-color: blueviolet;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
