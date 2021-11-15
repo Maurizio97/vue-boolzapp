@@ -41,7 +41,13 @@
 
                 <!-- enable notifications -->
                 <section id="enable-notif">
-
+                    <div id="bell">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div id="text-not">
+                        <h4>Ricevi notifiche di nuovi messaggi</h4>
+                        <div>Attiva notifiche desktop</div>
+                    </div>
                 </section>
                 <!-- ricerca -->
                 <section id="search">
@@ -60,7 +66,7 @@
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
                                 <span>{{contact.name}}</span>
-                                <div>...</div>
+                                <div>{{contact.messages[contact.messages.length - 1].text}}...</div>
                             </div>
                         </div>
                         
