@@ -60,7 +60,7 @@
 
             <!-- contatti -->
             <div id="col-sx-down" >
-                <section class="contact" v-for="contact, i in contacts">
+                <section class="contact" v-for="contact, i in contacts" key="i">
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
