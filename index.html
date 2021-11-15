@@ -27,7 +27,7 @@
                 <section class="profile">
                     <div class="info-profile">
                         <img src="img/avatar_1.jpg" alt="image of profile">
-                        <span>Nome Utente</span>
+                        <span>Maurizio Proietto</span>
                     </div>
                     
                     <div class="icon">
@@ -79,8 +79,8 @@
             <!-- profilo selezionato -->
             <section class="profile">
                 <div class="info-profile">
-                    <img src="img/avatar_1.jpg" alt="image of profile">
-                    <span>Nome Utente</span>
+                    <img :src="contacts[0].avatar" :alt="`image of ${contacts[0].name}`">
+                    <span>{{contacts[0].name}}</span>
                 </div>
                 
                 <div class="icon">
@@ -91,26 +91,29 @@
 
             </section>
             <!-- chat -->
-            <div id="chat" v-for="chat, i in messages ">
+            <div id="chat" >
                 <div class="layover">
                     <!-- messaggi di debug -->
+                   <!--  <div class="container-mex">
+                        <div class="mex-layout" :class="chat.status === 'sent'? 'sent' : 'received'"> {{chat.text}}</div>
+                    </div> -->
                     <div class="container-mex">
-                        <div class="mex-layout" :class="chat.status === 'sent'? 'sent' : 'received'"> {{messages.chat[i]}}</div>
-                    </div>
-                    <!-- <div class="container-mex">
-                        <div class="mex-layout received"> ciao come stai</div>
+                        <div class="mex-layout received"> ciao come stai </div>
                     </div>
                     <div class="container-mex">
                         <div class="mex-layout sent"> ciao come stai</div>
                     </div>
                     <div class="container-mex">
                         <div class="mex-layout received"> ciao come stai</div>
-                    </div> -->
+                    </div>
                 </div>
                 
             </div>
             <!-- casella di testo -->
-
+            <div id="text-area">
+                <i class="far fa-smile"></i>
+                <i class="fas fa-microphone"></i>
+            </div>
         </div>
         <!-- /column dx -->
 
