@@ -21,6 +21,7 @@ body {
 
 #back-down {
     height: 80vh;
+    background-color: hotpink;
 }
 
 #container-app {
@@ -55,7 +56,9 @@ body {
 }
 
 #col-sx-down {
-    height: calc( 100% - 210px);
+    max-height: calc( 100% - 210px);
+    /* min-height: 200px; */
+    overflow: auto;
 }
 
 
@@ -222,23 +225,34 @@ body {
     padding: 20px 0;
 }
 .container-mex {
-    height: 40px;
+    min-height: 40px;
 }
 
 .mex-layout {
     width: 35%;
     margin:10px 30px;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
 }
+
+.data {
+    display: flex;
+    justify-content: end;
+    font-size: 12px;
+    color: #b5b9bb;
+    font-weight: bold;
+}
+
 .sent {
     float: right;
-    background-color: rgb(47, 255, 127);
+    background-color: #d5f9ba;
 }
 
 .received {
     float: left;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
     
 /* text area */
