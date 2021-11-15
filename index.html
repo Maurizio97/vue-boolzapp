@@ -27,7 +27,7 @@
                 <section class="profile">
                     <div class="info-profile">
                         <img src="img/avatar_1.jpg" alt="image of profile">
-                        <span>Maurizio Proietto</span>
+                        <span id="font-bold">Maurizio Proietto</span>
                     </div>
                     
                     <div class="icon">
@@ -80,7 +80,11 @@
             <section class="profile">
                 <div class="info-profile">
                     <img :src="contacts[0].avatar" :alt="`image of ${contacts[0].name}`">
-                    <span>{{contacts[0].name}}</span>
+                    <!-- <span>{{contacts[0].name}}</span> -->
+                    <div class="text-container">  <!-- text-container l'ho riutilizzato dalla sezione contatti -->
+                        <span>{{contacts[0].name}}</span>
+                        <div> 11/10/20 16:15:22</div>
+                    </div>
                 </div>
                 
                 <div class="icon">
@@ -122,7 +126,6 @@
     <!-- /main -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="js/database.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

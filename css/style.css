@@ -82,6 +82,10 @@ body {
     margin-right: 4px;
 }
 
+#font-bold {
+    font-weight: bold;
+}
+
 .icon {
     width: 140px;
     display: flex;
@@ -173,6 +177,17 @@ body {
 }
 
 /* col dx */
+/* profile selected */
+
+.profile .text-container span {
+    font-size: 20px;
+}
+.profile .text-container div {
+    margin-top: 5px;
+    font-size: 14px;
+    color: grey;
+}
+
 /* chat */
 #chat {
     background-image: url(../img/back-whatapp.webp);
