@@ -172,3 +172,35 @@ body {
     color: #b1b1b1;
 }
 
+/* col dx */
+/* chat */
+#chat {
+    background-image: url(../img/back-whatapp.webp);
+    height: calc(100% - 150px);
+}
+
+.layover {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    padding: 20px 0;
+}
+.container-mex {
+    height: 40px;
+}
+
+.mex-layout {
+    width: 35%;
+    margin:10px 30px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.sent {
+    float: right;
+    background-color: rgb(47, 255, 127);
+}
+
+.received {
+    float: left;
+    background-color: rgb(255, 255, 255);
+}
+    
