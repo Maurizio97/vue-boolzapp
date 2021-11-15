@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp</title>
 </head>
@@ -13,31 +14,155 @@
         <div id="back-top"></div>
         <div id="back-down"></div>
     </div>
-    <!-- background -->
+    <!-- /background -->
 
     <!-- main -->
-    <div id="container-app">
+    <div id="container-app" class="clearfix">
         <!-- column sx -->
-            <!-- nome utente -->
+        <div class="col-sx">
 
-            <!-- ricerca -->
+            <!-- top section  -->
+            <div id="col-sx-up">
+                <!-- profilo: ho generalizzato questa sezione per utilizzarla in più parti della pagina-->
+                <section class="profile">
+                    <div class="info-profile">
+                        <img src="img/avatar_1.jpg" alt="image of profile">
+                        <span>Nome Utente</span>
+                    </div>
+                    
+                    <div class="icon">
+                        <i class="fas fa-redo-alt"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+
+                </section>
+
+
+                <!-- enable notifications -->
+                <section id="enable-notif">
+
+                </section>
+                <!-- ricerca -->
+                <section id="search">
+                    <div id="back-color">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div> 
+                </section>
+            </div>
 
             <!-- contatti -->
+            <div id="col-sx-down" >
+                <section class="contact">
+                        <div class="info-contact">
+                            <img src="img/avatar_1.jpg" alt="image of profile">
+                            <div class="text-container">
+                                <span>Michele</span>
+                                <div>Ultima chat ...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-chat">
+                           11/10/20 16:15:22
+                        </div>
+    
+                    <!-- </section> -->
+                    </section>
 
+                    <section class="contact">
+                        <div class="info-contact">
+                            <img src="img/avatar_1.jpg" alt="image of profile">
+                            <div class="text-container">
+                                <span>Michele</span>
+                                <div>Ultima chat ...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-chat">
+                           11/10/20 16:15:22
+                        </div>
+    
+                    <!-- </section> -->
+                    </section>
+
+                    <section class="contact">
+                        <div class="info-contact">
+                            <img src="img/avatar_1.jpg" alt="image of profile">
+                            <div class="text-container">
+                                <span>Michele</span>
+                                <div>Ultima chat ...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-chat">
+                           11/10/20 16:15:22
+                        </div>
+    
+                    <!-- </section> -->
+                    </section>
+
+                    <section class="contact active">
+                        <div class="info-contact">
+                            <img src="img/avatar_1.jpg" alt="image of profile">
+                            <div class="text-container">
+                                <span>Michele</span>
+                                <div>Ultima chat ...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-chat">
+                           11/10/20 16:15:22
+                        </div>
+    
+                    <!-- </section> -->
+                    </section>
+
+                    <section class="contact">
+                        <div class="info-contact">
+                            <img src="img/avatar_1.jpg" alt="image of profile">
+                            <div class="text-container">
+                                <span>Michele</span>
+                                <div>Ultima chat ...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-chat">
+                           11/10/20 16:15:22
+                        </div>
+    
+                    <!-- </section> -->
+                    </section>
+            </div>
+        </div>
         <!-- /column sx -->
 
+
         <!-- column dx -->
-
+        <div class="col-dx">
             <!-- profilo selezionato -->
+            <section class="profile">
+                <div class="info-profile">
+                    <img src="img/avatar_1.jpg" alt="image of profile">
+                    <span>Nome Utente</span>
+                </div>
+                
+                <div class="icon">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
 
+            </section>
             <!-- chat -->
 
             <!-- casella di testo -->
 
+        </div>
         <!-- /column dx -->
 
     </div>
-    <!-- main -->
+    <!-- /main -->
 
 </body>
 </html>
