@@ -16,7 +16,7 @@ body {
 
 #back-top {
     height: 20vh;
-    background-color: green;
+    background-color: #53b7c3;
 }
 
 #back-down {
@@ -204,3 +204,23 @@ body {
     background-color: rgb(255, 255, 255);
 }
     
+/* text area */
+#text-area {
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #eaeaea;
+}
+
+#text-area i {
+    color: #b1b1b1;
+    font-size: 25px;
+}
+
+#text-area input {
+    width: 80%;
+    height: 45px;
+    border: none;
+    padding: 7px;
+}
