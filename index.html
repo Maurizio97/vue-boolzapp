@@ -57,6 +57,7 @@
                 <section class="contact" v-for="contact, i in contacts">
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
+                            <!-- user; la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
                                 <span>{{contact.name}}</span>
                                 <div>...</div>
@@ -80,7 +81,6 @@
             <section class="profile">
                 <div class="info-profile">
                     <img :src="contacts[0].avatar" :alt="`image of ${contacts[0].name}`">
-                    <!-- <span>{{contacts[0].name}}</span> -->
                     <div class="text-container">  <!-- text-container l'ho riutilizzato dalla sezione contatti -->
                         <span>{{contacts[0].name}}</span>
                         <div> 11/10/20 16:15:22</div>
