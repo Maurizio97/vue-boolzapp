@@ -96,6 +96,26 @@ var boolzapp = new Vue({
             }
             this.chatActive = i
             this.contacts[this.chatActive].visible = true
+        },
+
+        sendMessage(newMess){
+            console.log(newMess);
+            newMessage =  {   
+                date:   '28/03/2020   10:10:40',   
+                text:   '',   
+                status:   'sent'   
+            },  
+            newMessage.text = newMess.target.value;
+            this.contacts[this.chatActive].messages.push(newMessage);
+            setTimeout(() => {
+                newMessage =  {   
+                    date:   '28/03/2020   10:10:40',   
+                    text:   'ok',   
+                    status:   'received'   
+                },  
+                this.contacts[this.chatActive].messages.push(newMessage);
+            }, 1000);
+            
         }
     }
 });
