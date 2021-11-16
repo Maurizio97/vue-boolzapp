@@ -1,6 +1,7 @@
 var boolzapp = new Vue({
     el: '#container-app',
     data: {
+        chatActive: 0,
         contacts:   [   
             {   
             name:   'Michele',   
@@ -27,7 +28,7 @@ var boolzapp = new Vue({
             {   
             name:   'Fabio',   
             avatar:   'img/avatar_2.jpg',   
-            visible:   true,   
+            visible:   false,   
             messages:   [   
                     {   
                     date:   '20/03/2020   16:30:00',   
@@ -50,7 +51,7 @@ var boolzapp = new Vue({
             {   
             name:   'Samuele',   
             avatar:   'img/avatar_3.jpg',   
-            visible:   true,   
+            visible:   false,   
             messages:   [   
                     {   
                     date:   '28/03/2020   10:10:40',   
@@ -72,7 +73,7 @@ var boolzapp = new Vue({
             {   
             name:   'Luisa',   
             avatar:   'img/avatar_4.jpg',   
-            visible:   true,   
+            visible:   false,   
             messages:   [   
                     {   
                     date:   '10/01/2020   15:30:55',   
@@ -87,5 +88,14 @@ var boolzapp = new Vue({
                     ],   
                 },   
             ]   
+    },
+    methods: {
+        openChat(i){
+            for(let y = 0; y < this.contacts.length; y++ ){
+                this.contacts[y].visible = false
+            }
+            this.chatActive = i
+            this.contacts[this.chatActive].visible = true
+        }
     }
 });

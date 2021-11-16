@@ -60,7 +60,8 @@
 
             <!-- contatti -->
             <div id="col-sx-down" >
-                <section class="contact" v-for="contact, i in contacts" key="i">
+                <!-- container contatti -->
+                <section class="contact" :class="contact.visible ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)">
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
@@ -73,9 +74,10 @@
                         <div class="data-chat">
                             {{contact.messages[contact.messages.length - 1].date}}
                         </div>
-    
-                    <!-- </section> -->
                 </section>
+                <!-- container contatti -->
+
+
             </div>
         </div>
         <!-- /column sx -->
@@ -86,9 +88,9 @@
             <!-- profilo selezionato -->
             <section class="profile">
                 <div class="info-profile">
-                    <img :src="contacts[0].avatar" :alt="`image of ${contacts[0].name}`">
+                    <img :src="contacts[chatActive].avatar" :alt="`image of ${contacts[chatActive].name}`">
                     <div class="text-container">  <!-- text-container l'ho riutilizzato dalla sezione contatti -->
-                        <span>{{contacts[0].name}}</span>
+                        <span>{{contacts[chatActive].name}}</span>
                         <div> 11/10/20 16:15:22</div>
                     </div>
                 </div>
@@ -103,38 +105,22 @@
             <!-- chat -->
             <div id="chat" >
                 <div class="layover">
-                    <!-- messaggi di debug -->
-                   <!--  <div class="container-mex">
-                        <div class="mex-layout" :class="chat.status === 'sent'? 'sent' : 'received'"> {{chat.text}}</div>
-                    </div> -->
-                    <div class="container-mex clearfix">
-                        <div class="mex-layout received"> 
-                            <span>Ciao come stai</span> 
+
+                    <!-- container messaggi -->
+                    <div class="container-mex clearfix" v-for="item in contacts[chatActive].messages">
+                        <div class="mex-layout" :class="item.status" > 
+                            <span>{{item.text}}</span> 
                             <div class="data">
-                                <span>11/10/20</span>
+                                <span>{{item.date}}</span>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="container-mex">
-                        <div class="mex-layout sent">
-                             Ciao come stai
-                            <div class="data">
-                                <span>11/10/20</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-mex">
-                        <div class="mex-layout received"> 
-                            Ciao come stai
-                            <div class="data">
-                                <span>11/10/20</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>   
+                    <!-- /container messaggi -->
+
                 </div>
-                
             </div>
+            <!-- /chat -->
+
             <!-- casella di testo -->
             <div id="text-area">
                 <i class="far fa-smile"></i>
