@@ -102,6 +102,8 @@ var boolzapp = new Vue({
                     text:   newMess.target.value,   
                     status:   'sent'   
                 }, 
+                // uso la variabile chat per salvarmi la posizione in modo che se cambio chat prima che mi risponda l'ok non mi arriva su un altra chat
+                chat = this.chatActive;
                 this.contacts[this.chatActive].messages.push(newMessage);
                  newMess.target.value = '';
                 setTimeout(() => {
@@ -110,7 +112,7 @@ var boolzapp = new Vue({
                         text:   'ok',   
                         status:   'received'   
                     },  
-                    this.contacts[this.chatActive].messages.push(newMessage);
+                    this.contacts[chat].messages.push(newMessage);
                 }, 1000);
             }
         },

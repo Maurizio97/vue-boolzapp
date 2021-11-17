@@ -62,12 +62,12 @@
             <div id="col-sx-down" >
                 <!-- container contatti -->
                 <section class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)" v-if="contact.name.toLowerCase().includes(search.toLowerCase())">
-                        <div class="info-contact" >
+                        <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
                                 <span>{{contact.name}}</span>
-                                <div>{{contact.messages[contact.messages.length - 1].text}}...</div>
+                                <div>{{contact.messages[contact.messages.length - 1].text.slice(0,15)}}...</div>
                             </div>
                         </div>
                         
