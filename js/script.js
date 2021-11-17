@@ -2,6 +2,7 @@ var boolzapp = new Vue({
     el: '#container-app',
     data: {
         chatActive: 0,
+        search: '',
         contacts:   [   
             {   
             name:   'Michele',   
@@ -91,11 +92,7 @@ var boolzapp = new Vue({
     },
     methods: {
         openChat(i){
-            for(let y = 0; y < this.contacts.length; y++ ){
-                this.contacts[y].visible = false
-            }
             this.chatActive = i
-            this.contacts[this.chatActive].visible = true
         },
 
         sendMessage(newMess){
@@ -107,6 +104,7 @@ var boolzapp = new Vue({
             },  
             newMessage.text = newMess.target.value;
             this.contacts[this.chatActive].messages.push(newMessage);
+            newMess.target.value = '';
             setTimeout(() => {
                 newMessage =  {   
                     date:   '28/03/2020   10:10:40',   
@@ -116,6 +114,12 @@ var boolzapp = new Vue({
                 this.contacts[this.chatActive].messages.push(newMessage);
             }, 1000);
             
-        }
+        },
+
+     /*    searchContact(event){
+            console.log(event);
+            this.search = event.target.value
+            
+        } */
     }
 });

@@ -53,7 +53,7 @@
                 <section id="search">
                     <div id="back-color">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" @focus="searchContact($event)" >
                     </div> 
                 </section>
             </div>
@@ -61,7 +61,7 @@
             <!-- contatti -->
             <div id="col-sx-down" >
                 <!-- container contatti -->
-                <section class="contact" :class="contact.visible ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)">
+                <section  v-if="contact.name.includes(search)" class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)">
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
@@ -73,6 +73,10 @@
                         
                         <div class="data-chat">
                             {{contact.messages[contact.messages.length - 1].date}}
+                        </div>
+
+                        <div v-else>
+                            non ci sono corrispondenze
                         </div>
                 </section>
                 <!-- container contatti -->
@@ -91,7 +95,7 @@
                     <img :src="contacts[chatActive].avatar" :alt="`image of ${contacts[chatActive].name}`">
                     <div class="text-container">  <!-- text-container l'ho riutilizzato dalla sezione contatti -->
                         <span>{{contacts[chatActive].name}}</span>
-                        <div> 11/10/20 16:15:22</div>
+                        <div> {{contacts[chatActive].messages[contacts[chatActive].messages.length - 1].date}}</div>
                     </div>
                 </div>
                 
