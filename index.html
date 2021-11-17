@@ -53,7 +53,7 @@
                 <section id="search">
                     <div id="back-color">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" @focus="searchContact($event)" >
+                        <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat" >
                     </div> 
                 </section>
             </div>
@@ -61,8 +61,8 @@
             <!-- contatti -->
             <div id="col-sx-down" >
                 <!-- container contatti -->
-                <section  v-if="contact.name.includes(search)" class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)">
-                        <div class="info-contact">
+                <section class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)" v-if="contact.name.toLowerCase().includes(search.toLowerCase())">
+                        <div class="info-contact" >
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
@@ -73,10 +73,6 @@
                         
                         <div class="data-chat">
                             {{contact.messages[contact.messages.length - 1].date}}
-                        </div>
-
-                        <div v-else>
-                            non ci sono corrispondenze
                         </div>
                 </section>
                 <!-- container contatti -->

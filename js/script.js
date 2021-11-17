@@ -92,34 +92,27 @@ var boolzapp = new Vue({
     },
     methods: {
         openChat(i){
-            this.chatActive = i
+            this.chatActive = i;
         },
 
         sendMessage(newMess){
-            console.log(newMess);
-            newMessage =  {   
-                date:   '28/03/2020   10:10:40',   
-                text:   '',   
-                status:   'sent'   
-            },  
-            newMessage.text = newMess.target.value;
-            this.contacts[this.chatActive].messages.push(newMessage);
-            newMess.target.value = '';
-            setTimeout(() => {
+            if (newMess.target.value !== "") {
                 newMessage =  {   
                     date:   '28/03/2020   10:10:40',   
-                    text:   'ok',   
-                    status:   'received'   
-                },  
+                    text:   newMess.target.value,   
+                    status:   'sent'   
+                }, 
                 this.contacts[this.chatActive].messages.push(newMessage);
-            }, 1000);
-            
+                 newMess.target.value = '';
+                setTimeout(() => {
+                    newMessage =  {   
+                        date:   '28/03/2020   10:10:40',   
+                        text:   'ok',   
+                        status:   'received'   
+                    },  
+                    this.contacts[this.chatActive].messages.push(newMessage);
+                }, 1000);
+            }
         },
-
-     /*    searchContact(event){
-            console.log(event);
-            this.search = event.target.value
-            
-        } */
     }
 });
