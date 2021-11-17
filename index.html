@@ -53,7 +53,7 @@
                 <section id="search">
                     <div id="back-color">
                         <i class="fas fa-search"></i>
-                        <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat" >
+                        <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
                     </div> 
                 </section>
             </div>
@@ -61,7 +61,7 @@
             <!-- contatti -->
             <div id="col-sx-down" >
                 <!-- container contatti -->
-                <section class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" key="i" @click="openChat(i)" v-if="contact.name.toLowerCase().includes(search.toLowerCase())">
+                <section class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" :key="i" @click="openChat(i)" v-if="contact.name.toLowerCase().includes(search.toLowerCase())">
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
