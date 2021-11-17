@@ -9,12 +9,12 @@ var boolzapp = new Vue({
             avatar:   'img/avatar_1.jpg',   
             visible:   true,   
             messages:   [   
-                    {   
+                   /*  {   
                     date:   '10/01/2020   15:30:55',   
                     text:   'Hai   portato   a   spasso   il   cane?',   
                     status:   'sent'   
-                    },   
-                    {   
+                    },    */
+                    /* {   
                     date:   '10/01/2020   15:50:00',   
                     text:   'Ricordati   di   dargli   da   mangiare',   
                     status:   'sent'   
@@ -23,7 +23,7 @@ var boolzapp = new Vue({
                     date:   '10/01/2020   16:15:22',   
                     text:   'Tutto   fatto!',   
                     status:   'received'   
-                    }   
+                    }    */
                 ],   
             },   
             {   
@@ -115,6 +115,11 @@ var boolzapp = new Vue({
                     this.contacts[chat].messages.push(newMessage);
                 }, 1000);
             }
+        },
+
+        deleteMessage(index){
+            console.log(index);
+            this.contacts[this.chatActive].messages.splice(index, 1);
         },
     }
 });

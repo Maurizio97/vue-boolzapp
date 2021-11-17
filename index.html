@@ -67,12 +67,14 @@
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
                                 <span>{{contact.name}}</span>
-                                <div>{{contact.messages[contact.messages.length - 1].text.slice(0,15)}}...</div>
+                                <div v-if="contact.messages.length !== 0">{{contact.messages[contact.messages.length - 1].text.slice(0,15)}}...</div>
+                                <div>La chat è vuota</div>
                             </div>
                         </div>
                         
                         <div class="data-chat">
-                            {{contact.messages[contact.messages.length - 1].date}}
+                            <span v-if="contact.messages.length !== 0">{{contact.messages[contact.messages.length - 1].date}}</span>
+                            <span v-else>Il suo ultimo accesso non sono affari tuoi</span>
                         </div>
                 </section>
                 <!-- container contatti -->
@@ -91,7 +93,8 @@
                     <img :src="contacts[chatActive].avatar" :alt="`image of ${contacts[chatActive].name}`">
                     <div class="text-container">  <!-- text-container l'ho riutilizzato dalla sezione contatti -->
                         <span>{{contacts[chatActive].name}}</span>
-                        <div> {{contacts[chatActive].messages[contacts[chatActive].messages.length - 1].date}}</div>
+                        <div v-if="contacts[chatActive].messages.length !== 0"> {{contacts[chatActive].messages[contacts[chatActive].messages.length - 1].date}}</div>
+                        <div v-else>Il suo ultimo accesso non sono affari tuoi</div>
                     </div>
                 </div>
                 
@@ -107,14 +110,27 @@
                 <div class="layover">
 
                     <!-- container messaggi -->
-                    <div class="container-mex clearfix" v-for="item in contacts[chatActive].messages">
+                    <div class="container-mex clearfix" v-if="item.length !== 0" v-for="item, i in contacts[chatActive].messages">
                         <div class="mex-layout" :class="item.status" > 
                             <span>{{item.text}}</span> 
                             <div class="data">
                                 <span>{{item.date}}</span>
+                                <i class="fas fa-chevron-down">
+                                    <div class="menu none">
+                                        <div class="info-message">
+                                            Info message
+                                        </div>
+                                        <div class="delete-message" @click="deleteMessage(i)">
+                                            Delete message
+                                        </div>
+                                    </div>
+                                </i>
                             </div>
                         </div>
                     </div>   
+                    <div v-else>
+                        scrivi un nuovo messaggio e fatti rispondere ok
+                    </div>
                     <!-- /container messaggi -->
 
                 </div>

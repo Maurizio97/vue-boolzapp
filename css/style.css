@@ -165,6 +165,7 @@ body {
     align-items: center;
     justify-content: space-between;
     border-bottom: solid 1px #eaeaea;
+    cursor: pointer;
 }
 
 .active {
@@ -231,6 +232,39 @@ body {
     border-radius: 10px;
     font-weight: bold;
     font-size: 15px;
+}
+
+.fa-chevron-down {
+    margin-left: 3px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.none {
+    display: none;
+}
+
+.fa-chevron-down:hover .menu{
+    position: absolute;
+    background-color: white;
+    left: -89px;
+    padding: 10px;
+    display: block;
+    border-radius: 5%;
+}
+
+.menu div:hover {
+    color: #53b7c3;
+}
+
+.menu div {
+    padding: 3px 0;
+}
+
+.data span {
+    padding: 5px 0;
 }
 
 .data {
