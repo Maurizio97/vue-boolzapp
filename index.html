@@ -23,32 +23,40 @@
 
             <!-- top section  -->
             <div id="col-sx-up">
-                <!-- profilo: ho generalizzato questa sezione per utilizzarla in più parti della pagina-->
+                <!-- profilo user: ho generalizzato questa sezione per utilizzarla in più parti della pagina-->
                 <section class="profile">
                     <div class="info-profile">
                         <img src="img/avatar_1.jpg" alt="image of profile">
                         <span id="font-bold">Maurizio Proietto</span>
                     </div>
                     
+                    <!-- icone sezione in alto a sx -->
                     <div class="icon">
                         <i class="fas fa-redo-alt"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
+                    <!-- /icone sezione in alto a sx -->
 
                 </section>
-
+                <!-- /profilo user -->
 
                 <!-- enable notifications -->
                 <section id="enable-notif">
+
+                    <!-- campanella -->
                     <div id="bell">
                         <i class="fas fa-bell-slash"></i>
                     </div>
+
+                    <!-- testo -->
                     <div id="text-not">
                         <h4>Ricevi notifiche di nuovi messaggi</h4>
                         <div>Attiva notifiche desktop</div>
                     </div>
                 </section>
+                <!-- /enable notifications -->
+
                 <!-- ricerca -->
                 <section id="search">
                     <div id="back-color">
@@ -56,22 +64,28 @@
                         <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
                     </div> 
                 </section>
+                <!-- /ricerca -->
+
             </div>
 
             <!-- contatti -->
             <div id="col-sx-down" >
                 <!-- container contatti -->
                 <section class="contact" :class="i === chatActive ? 'active':''" v-for="contact, i in contacts" :key="i" @click="openChat(i)" v-if="contact.name.toLowerCase().includes(search.toLowerCase())">
+ 
+                        <!-- info principali contatto: immagine, nome, ultimo messaggio -->
                         <div class="info-contact">
                             <img :src="contact.avatar " :alt="`image of ${contact.name}`">
                             <!-- userò la classe qui sotto anche nella sezione del profilo selezionato -->
                             <div class="text-container">
                                 <span>{{contact.name}}</span>
                                 <div v-if="contact.messages.length !== 0">{{contact.messages[contact.messages.length - 1].text.slice(0,15)}}...</div>
-                                <div>La chat è vuota</div>
+                                <div v-else>La chat è vuota</div>
                             </div>
                         </div>
+                        <!-- /info principali contatto: immagine, nome, ultimo messaggio -->
                         
+                        <!-- ultimo accesso o data ultimo messaggio -->
                         <div class="data-chat">
                             <span v-if="contact.messages.length !== 0">{{contact.messages[contact.messages.length - 1].date}}</span>
                             <span v-else>Il suo ultimo accesso non sono affari tuoi</span>
@@ -98,6 +112,7 @@
                     </div>
                 </div>
                 
+                <!-- icone sezione in alto a destra relative all'account selezionato -->
                 <div class="icon">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
@@ -110,11 +125,14 @@
                 <div class="layover">
 
                     <!-- container messaggi -->
-                    <div class="container-mex clearfix" v-if="item.length !== 0" v-for="item, i in contacts[chatActive].messages">
+                    <div class="container-mex clearfix" v-if="item.length !== 0" v-for="item, i in contacts[chatActive].messages"> 
+                        <!-- testo messaggio -->
                         <div class="mex-layout" :class="item.status" > 
                             <span>{{item.text}}</span> 
+                            <!-- data -->
                             <div class="data">
                                 <span>{{item.date}}</span>
+                                <!-- menù a tendina per le info sul messaggio o la cancellazione -->
                                 <i class="fas fa-chevron-down">
                                     <div class="menu none">
                                         <div class="info-message">
@@ -128,6 +146,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!-- se la condizione non si verifica stampa questo in pagina -->
                     <div v-else>
                         scrivi un nuovo messaggio e fatti rispondere ok
                     </div>
