@@ -96,9 +96,10 @@ var boolzapp = new Vue({
         },
 
         sendMessage(newMess){
+            console.log(dayjs());
             if (newMess.target.value !== "") {
                 newMessage =  {   
-                    date:   '28/03/2020   10:10:40',   
+                    date:   dayjs().format("YYYY/MM/DD  hh:mm:ss"),   
                     text:   newMess.target.value,   
                     status:   'sent'   
                 }, 
@@ -108,7 +109,7 @@ var boolzapp = new Vue({
                  newMess.target.value = '';
                 setTimeout(() => {
                     newMessage =  {   
-                        date:   '28/03/2020   10:10:40',   
+                        date:   dayjs().format("YYYY/MM/DD  hh:mm:ss"),   
                         text:   'ok',   
                         status:   'received'   
                     },  
